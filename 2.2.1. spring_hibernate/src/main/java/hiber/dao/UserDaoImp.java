@@ -33,8 +33,10 @@ public class UserDaoImp implements UserDao {
     public List<User> getUserByCar(String model, int series) {
         Query query = sessionFactory.getCurrentSession()
                                     .createQuery("FROM User WHERE " +
-                                            "car.model = model " +
-                                            "AND car.series = series");
+                                            "car.model = :model " +
+                                            "AND car.series = :series");
+        query.setParameter("model", model);
+        query.setParameter("series", series);
 
         return query.getResultList();
     }
