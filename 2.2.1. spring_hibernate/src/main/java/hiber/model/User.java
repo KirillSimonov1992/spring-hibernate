@@ -19,7 +19,6 @@ public class User {
    @Column(name = "email")
    private String email;
 
-   // if uni-directional
    @OneToOne(cascade = CascadeType.ALL)
    @JoinColumn(name = "id")
    private Car car;

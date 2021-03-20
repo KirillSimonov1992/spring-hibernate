@@ -3,7 +3,6 @@ package hiber;
 import hiber.config.AppConfig;
 import hiber.model.Car;
 import hiber.model.User;
-import hiber.service.CarService;
 import hiber.service.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -34,16 +33,6 @@ public class MainApp {
         userService.getUserByCar("Chevrolet", 1)
                    .stream()
                    .forEach(System.out::println);
-
-
-//        CarService carService = context.getBean(CarService.class);
-//
-//        userService.listUsers().forEach(user ->
-//                carService.getCarsByUser(user)
-//                          .stream()
-//                          .forEach(System.out::println)
-//        );
-
 
 
         context.close();
